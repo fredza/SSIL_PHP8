@@ -1,10 +1,13 @@
 <?php
 require __DIR__.'/vendor/autoload.php';
 
-$add = 5 + 32.5 + 16;
-$sub = $add - 12;
-$multiply = $sub * 2;
-$divide = $multiply / 3;
-$rest = 21 % 2;
-$rest2 = 10 % 2;
-dd($add, $sub, $multiply, $divide, $rest, $rest2);
+$number = 12;
+$number1 = $number++;
+$number2 = $number--;
+$number3 = ++$number;
+$number4 = --$number;
+dump($number, $number1, $number2, $number3, $number4);
+dump($number++); // Ne donne plus 13 (avec une post-incrémentation directe ça fonctionne) attention à la priorité des opérateurs post > pré.
+// directement : $number = 12;$number++;dump($number);
+
+// Dans les boucles, il faudra faire la distinction entre post et pré incrémentation.
