@@ -1,13 +1,31 @@
 <?php
 require __DIR__.'/vendor/autoload.php';
 
-$number = 12;
-$number1 = $number++;
-$number2 = $number--;
-$number3 = ++$number;
-$number4 = --$number;
-dump($number, $number1, $number2, $number3, $number4);
-dump($number++); // Ne donne plus 13 (avec une post-incrémentation directe ça fonctionne) attention à la priorité des opérateurs post > pré.
-// directement : $number = 12;$number++;dump($number);
+$nb1 = 2.0;
+$nb2 = 2;
+$nb3 = 3;
 
-// Dans les boucles, il faudra faire la distinction entre post et pré incrémentation.
+dump(
+    $nb1 == $nb2,
+    $nb1 === $nb2,
+    $nb1 != $nb2,
+    $nb1 !== $nb2,
+    'supp et inf',
+    $nb1 > $nb3,
+    $nb1 >=$nb3,
+    $nb1 < $nb3,
+    $nb1 <= $nb3,
+);
+//----------------------------Les Booléens----------------------------
+dump('Les Booléens',
+(""),        // bool(false)
+("0"),       // bool(false)
+(1),         // bool(true)
+(-2),        // bool(true)
+("foo"),     // bool(true)
+(2.3e5),     // bool(true)
+(array(12)), // bool(true)
+(array()),   // bool(false)
+("false"),   // bool(true)
+[] == false,
+);
