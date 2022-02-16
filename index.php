@@ -1,15 +1,9 @@
 <?php
-require __DIR__.'/vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
-$number = 28;
-//$number = $number *2;
-$number *= 2;
-$name = "Frédéric".PHP_EOL;
-$message = 'Bonjour ';
-$message .= $name;
-//$user = $user ?? [];
-$user = 'FRED';
-$user ??= 'Frédéric';
-dump($number, $message, $user);
-printf('Le nom %s et le numéro est %s', $user, $number);
+$expr1 = false;
+$expr2 = true;
+$expr3 = false;
+
+dump(($expr1 == $expr2) && ($expr2 || $expr3));
 
