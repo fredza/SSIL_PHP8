@@ -1,9 +1,17 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-for ($i=1; $i <= 100; $i++) {
-    echo 'boucle '.$i.PHP_EOL;
+$posts = [
+    [
+        'title' => 'Hello World'
+    ],
+    [
+        'title' => 'Hi everybody!'
+    ],
+];
+
+foreach ($posts as $key => $post) {
+    echo "$key: {$post['title']}".PHP_EOL;
+
 }
-
-
 
