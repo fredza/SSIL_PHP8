@@ -1,34 +1,24 @@
 <?php
-// Video foreach (partie 2) 06:54 / 16.05
+// Video while partie 2
 require __DIR__ . '/vendor/autoload.php';
-$others = [
-    [
-        'title' => 'From other array'
-    ],
-];
 
-$posts = [
-    [
-        'title' => 'Hello World'
-    ],
-    ... $others,    // 2ème méthode
-    [
-        'title' => 'Hi everybody!'
-    ],
-];
-$user = [
-    'Frederic',
-    'fredza801@localhost.com',
-    'default',
-];
-[$name, $mail, $role] = $user;
-dump($name, $mail, $role);
+$fp = fopen('hello.txt', 'r');
+
+if (!$fp) {
+    echo "Sorry, unable to open the file".PHP_EOL;
+} else {
+    // Version do-while qui dans ce cas fonctionne
+//    $char = '';
+    do {
+        echo $char ?? 'Contenu du fichier :'.PHP_EOL;
+    } while (($char = fgets($fp)) !== false);
+//    while (($char = fgets($fp)) !== false) { // fgets() à la place de fgetc() unicode ? 1 caractère par ligne
+    }
+fclose($fp);
+/*****************************************************
+ * todo Steven pourquoi il n'y a pas de PHP_EOL en dernier character parcouru par la boucle ?
+ */
 
 
-//$posts2 = array_merge($posts, $others); // 1ere méthode
-
-foreach ($posts as $key => $post) {
-    echo "$key: {$post['title']}".PHP_EOL;
-}
 
 
