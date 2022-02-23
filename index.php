@@ -1,32 +1,13 @@
-<?php
-// L'instruction switch et l'expression match 1
+<?php declare(strict_types = 1);
+// Les fonctions arguments infini spread operator '...'
 require __DIR__ . '/vendor/autoload.php';
 
-$role = 'fred';
+function hello(string ...$names): string
+{
+    $names = implode(', ', $names);
+    return "Hello $names".PHP_EOL;
+}
 
-//
-//if ($role === 'visiteur') {
-//    $message = 'Vous ne pouvez rien faire';
-//} elseif ($role === 'admin') {
-//    $message = 'Vous êtes l\'administrateur de cette app';
-//} else {
-//    $message = 'Vous êtes utilisateur';
-//}
-//switch ($role) {
-//    case 'visiteur':
-//        $message = 'Vous ne pouvez rien faire';
-//        break;
-//    case 'admin':
-//        $message = 'Vous êtes l\'administrateur de cette app';
-//        break;
-//    default:
-//        $message = 'Vous êtes membre';
-//
-//}
-$message = match($role) {
-    'visiteur', 'fred' => 'Vous ne pouvez rien faire',
-    'admin' => 'Vous êtes l\'administrateur de cette app',
-    default => 'Vous êtes membre',
-};
+$hey = hello('Fred', 'Domi', 'Florian','Laure');
 
-echo $message . PHP_EOL;
+echo $hey;
