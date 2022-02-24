@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 // Les fonctions anonymes et en flèches
-require __DIR__ . '/vendor/autoload.php';
+//require __DIR__ . '/vendor/autoload.php';
 
 $numbers = [2, 4, 6, 10];
 
@@ -19,4 +19,4 @@ $square = array_map(
 );
 
 
-dd($square);
+var_dump($square);
